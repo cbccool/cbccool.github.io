@@ -112,7 +112,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/linux-技术/" style="font-size: 10px;">linux 技术</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,66 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-高效Linux命令小结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/31/高效Linux命令小结/" class="article-date">
+  	<time datetime="2015-08-31T14:50:30.000Z" itemprop="datePublished">2015-08-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/31/高效Linux命令小结/">高效Linux命令小结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><code>mv xxxx{,.bak}</code> 等同于 <code>mv xxxx xxxx.bak</code></li>
+<li>esc + . 能填充之前命令的最后一个字段</li>
+<li>ctrl + r然后输入xxx，搜索之前包含xxx的命令</li>
+<li>ctrl+z可以把当前程序丢后台，fg命令可以恢复。<br>退出su，退出ssh，可以用ctrl+d(真有人不知道这个，手敲exit, logout)。<br>sudo !!用sudo执行上条命令。<br>如果在前台运行了一个程序，但是你需要退出终端，保持程序继续在后台运行，你可以这样: ctrl+z，把程序放在后台；bg让程序继续运行；disown -h %1（%n是你jobs命令返回的那个，没有其它后台程序的话，一般是%1）。<br>cd - 返回上一个进入的目录<br>!n ，重复执行第n条命令，如果该命令很长，就能节省大量输入命令的时间；<br>10.!! ，重复执行上一条命令；<br>sudo !! ，以管理员权限执行上一条命令；<br>ps -eo pid,lstart|grep PID,查询进程的准确启动时间。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> test（）&#123;</span><br><span class="line">	</span><br><span class="line">	System.out.println(<span class="string">"hell"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-技术/">linux 技术</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-test-1" class="article article-type-post" itemscope itemprop="blogPost">
   
