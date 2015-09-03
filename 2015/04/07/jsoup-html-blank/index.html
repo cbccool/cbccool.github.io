@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/2 | 陈小二的博客</title>
+  <title>Jsoup解析HTML文本，&amp;nbsp;乱码的问题以及解决 | 陈小二的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈小二的博客">
-<meta property="og:url" content="http://chenxiaoer.com/archives/2015/02/index.html">
+  <meta name="description" content="遇到的一个问题，记录一下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jsoup解析HTML文本，&nbsp;乱码的问题以及解决">
+<meta property="og:url" content="http://chenxiaoer.com/2015/04/07/jsoup-html-blank/index.html">
 <meta property="og:site_name" content="陈小二的博客">
-<meta property="og:description">
+<meta property="og:description" content="遇到的一个问题，记录一下。">
+<meta property="og:updated_time" content="2015-09-03T01:32:40.024Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈小二的博客">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Jsoup解析HTML文本，&nbsp;乱码的问题以及解决">
+<meta name="twitter:description" content="遇到的一个问题，记录一下。">
   
     <link rel="alternative" href="/atom.xml" title="陈小二的博客" type="application/atom+xml">
   
@@ -177,115 +178,116 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-jsoup-html-blank" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2015/04/07/jsoup-html-blank/" class="article-date">
+  	<time datetime="2015-04-07T03:11:11.000Z" itemprop="datePublished">2015-04-07</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Jsoup解析HTML文本，&amp;nbsp;乱码的问题以及解决
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jsoup/">Jsoup</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/02/07/linux-command/" class="archive-article-date">
-  	<time datetime="2015-02-07T03:11:11.000Z" itemprop="datePublished">Feb 7</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/02/07/linux-command/">高效Linux命令小结</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>遇到的一个问题，记录一下。</p>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getHtmlContent</span><span class="params">(String htmlContent)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (htmlContent != <span class="keyword">null</span> &amp;&amp; htmlContent.length() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> Jsoup.parse(htmlContent).text();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于是富文本，所以在页面展示的时候，先过滤标签，用的是Jsoup。 但是发现，页面文本仍然有<code>&amp;nbsp;</code>,以为是过滤出了问题，但是控制台输出乱码?, 于是搜索了一下。。。发现是Jsoup解析<code>&amp;nbsp;</code>会乱码。 于是…</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getHtmlContent</span><span class="params">(String htmlContent)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (htmlContent != <span class="keyword">null</span> &amp;&amp; htmlContent.length() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> Jsoup.parse(htmlContent).text().replace(Jsoup.parse(<span class="string">"&amp;nbsp"</span>).text(), <span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LINUX/">LINUX</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/02/05/ehcache.xml-setting/" class="archive-article-date">
-  	<time datetime="2015-02-05T03:11:11.000Z" itemprop="datePublished">Feb 5</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/02/05/ehcache.xml-setting/">ehcache.xml文件配置说明</a>
-    </h1>
+    <a href="/2015/05/04/Long-equals-=/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Long类型比较之equals与==的疑惑
+        
+      </div>
+    </a>
   
+  
+    <a href="/2015/03/11/点击空白关闭窗口/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">点击空白关闭窗口</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/echcache/">echcache</a></li></ul>
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/02/01/spring-kaptcha/" class="archive-article-date">
-  	<time datetime="2015-02-01T03:11:11.000Z" itemprop="datePublished">Feb 1</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/02/01/spring-kaptcha/">Spring中整合kaptcha验证码</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="jsoup-html-blank" data-title="Jsoup解析HTML文本，&amp;nbsp;乱码的问题以及解决" data-url="http://chenxiaoer.com/2015/04/07/jsoup-html-blank/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"chenxiaoer"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
 
 </div>
       <footer id="footer">
@@ -311,8 +313,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false

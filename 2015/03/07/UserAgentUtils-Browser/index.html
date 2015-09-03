@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/2 | 陈小二的博客</title>
+  <title>UserAgentUtils判断浏览器 | 陈小二的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈小二的博客">
-<meta property="og:url" content="http://chenxiaoer.com/archives/2015/02/index.html">
+  <meta name="description" content="蛮好用的一个判断浏览器的工具包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UserAgentUtils判断浏览器">
+<meta property="og:url" content="http://chenxiaoer.com/2015/03/07/UserAgentUtils-Browser/index.html">
 <meta property="og:site_name" content="陈小二的博客">
-<meta property="og:description">
+<meta property="og:description" content="蛮好用的一个判断浏览器的工具包">
+<meta property="og:updated_time" content="2015-09-03T01:40:21.584Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈小二的博客">
-<meta name="twitter:description">
+<meta name="twitter:title" content="UserAgentUtils判断浏览器">
+<meta name="twitter:description" content="蛮好用的一个判断浏览器的工具包">
   
     <link rel="alternative" href="/atom.xml" title="陈小二的博客" type="application/atom+xml">
   
@@ -177,115 +178,122 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-UserAgentUtils-Browser" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2015/03/07/UserAgentUtils-Browser/" class="article-date">
+  	<time datetime="2015-03-07T03:11:11.000Z" itemprop="datePublished">2015-03-07</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      UserAgentUtils判断浏览器
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具包/">工具包</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/02/07/linux-command/" class="archive-article-date">
-  	<time datetime="2015-02-07T03:11:11.000Z" itemprop="datePublished">Feb 7</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/02/07/linux-command/">高效Linux命令小结</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>蛮好用的一个判断浏览器的工具包</p>
+<a id="more"></a>
+<ol>
+<li><p>jar下载地址：<a href="http://pan.baidu.com/s/1eQJ4QjS" target="_blank" rel="external">下载地址</a></p>
+</li>
+<li><p>使用者：</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">UserAgent useragent = <span class="keyword">new</span> UserAgent(request.getHeader(<span class="string">"user-agent"</span>));  </span><br><span class="line">log.info(useragent);  </span><br><span class="line">log.info(useragent.getBrowser());  </span><br><span class="line">log.info(useragent.getBrowserVersion());  </span><br><span class="line">log.info(useragent.getOperatingSystem());</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WINDOWS_7-FIREFOX  </span><br><span class="line"> FIREFOX</span><br><span class="line"><span class="number">14.0</span>.1  </span><br><span class="line">WINDOWS_7</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LINUX/">LINUX</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/02/05/ehcache.xml-setting/" class="archive-article-date">
-  	<time datetime="2015-02-05T03:11:11.000Z" itemprop="datePublished">Feb 5</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/02/05/ehcache.xml-setting/">ehcache.xml文件配置说明</a>
-    </h1>
+    <a href="/2015/03/11/点击空白关闭窗口/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          点击空白关闭窗口
+        
+      </div>
+    </a>
   
+  
+    <a href="/2015/02/07/linux-command/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">高效Linux命令小结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/echcache/">echcache</a></li></ul>
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/02/01/spring-kaptcha/" class="archive-article-date">
-  	<time datetime="2015-02-01T03:11:11.000Z" itemprop="datePublished">Feb 1</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/02/01/spring-kaptcha/">Spring中整合kaptcha验证码</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="UserAgentUtils-Browser" data-title="UserAgentUtils判断浏览器" data-url="http://chenxiaoer.com/2015/03/07/UserAgentUtils-Browser/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"chenxiaoer"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
 
 </div>
       <footer id="footer">
@@ -311,8 +319,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false

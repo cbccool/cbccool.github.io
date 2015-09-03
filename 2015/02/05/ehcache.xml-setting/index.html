@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>高效Linux命令小结 | 陈小二的博客</title>
+  <title>ehcache.xml文件配置说明 | 陈小二的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日常工作中常用的Linux命令小结">
+  <meta name="description" content="ehcache.xml文件配置说明，方便查阅。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高效Linux命令小结">
-<meta property="og:url" content="http://chenxiaoer.com/2015/02/07/linux-command/index.html">
+<meta property="og:title" content="ehcache.xml文件配置说明">
+<meta property="og:url" content="http://chenxiaoer.com/2015/02/05/ehcache.xml-setting/index.html">
 <meta property="og:site_name" content="陈小二的博客">
-<meta property="og:description" content="日常工作中常用的Linux命令小结">
-<meta property="og:updated_time" content="2015-09-03T01:32:41.810Z">
+<meta property="og:description" content="ehcache.xml文件配置说明，方便查阅。">
+<meta property="og:updated_time" content="2015-09-03T01:33:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高效Linux命令小结">
-<meta name="twitter:description" content="日常工作中常用的Linux命令小结">
+<meta name="twitter:title" content="ehcache.xml文件配置说明">
+<meta name="twitter:description" content="ehcache.xml文件配置说明，方便查阅。">
   
     <link rel="alternative" href="/atom.xml" title="陈小二的博客" type="application/atom+xml">
   
@@ -178,11 +178,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-linux-command" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ehcache.xml-setting" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/02/07/linux-command/" class="article-date">
-  	<time datetime="2015-02-07T03:11:11.000Z" itemprop="datePublished">2015-02-07</time>
+      <a href="/2015/02/05/ehcache.xml-setting/" class="article-date">
+  	<time datetime="2015-02-05T03:11:11.000Z" itemprop="datePublished">2015-02-05</time>
 </a>
     </div>
   
@@ -195,7 +195,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      高效Linux命令小结
+      ehcache.xml文件配置说明
     </h1>
   
 
@@ -204,7 +204,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LINUX/">LINUX</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/echcache/">echcache</a></li></ul>
 	</div>
 
         
@@ -215,23 +215,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>日常工作中常用的Linux命令小结</p>
+        <p>ehcache.xml文件配置说明，方便查阅。</p>
 <a id="more"></a>
-<ol>
-<li><code>mv xxxx{,.bak}</code> 等同于 <code>mv xxxx xxxx.bak</code></li>
-<li><code>esc + .</code> 能填充之前命令的最后一个字段</li>
-<li><code>ctrl + r</code> 然后输入xxx，搜索之前包含xxx的命令</li>
-<li><code>ctrl+z</code> 可以把当前程序丢后台，<code>fg</code> 命令可以恢复。</li>
-<li>退出su，退出ssh，可以用<code>ctrl+d</code>(真有人不知道这个，手敲exit, logout)。</li>
-<li><code>sudo !!</code>用sudo执行上条命令。</li>
-<li>如果在前台运行了一个程序，但是你需要退出终端，保持程序继续在后台运行。<br>你可以这样: <code>ctrl+z</code>，把程序放在后台；<code>bg</code>让程序继续运行；<code>disown -h %1</code>（%n是你jobs命令返回的那个，没有其它后台程序的话，一般是%1）。</li>
-<li><code>cd -</code>  返回上一个进入的目录</li>
-<li><code>!n</code> ，重复执行第n条命令，如果该命令很长，就能节省大量输入命令的时间。</li>
-<li><code>!!</code> ，重复执行上一条命令；</li>
-<li><code>sudo !!</code>，以管理员权限执行上一条命令；</li>
-<li><code>ps -eO lstart|grep &#39;xx&#39;</code>,查询xx进程的准确启动时间。</li>
-<li><code>ps -ef|grep &#39;xx&#39;|grep -v grep|cut -c 9-15|xargs kill -9</code> 批量kill进程。<br>或者：<code>ps -ef|grep java|grep -v grep|awk &#39;xx&#39;|xargs -I {} -t kill -9 {}</code></li>
-</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ehcache</span> <span class="attribute">xmlns:xsi</span>=<span class="value">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attribute">xsi:noNamespaceSchemaLocation</span>=<span class="value">"../config/ehcache.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">diskStore</span> <span class="attribute">path</span>=<span class="value">"java.io.tmpdir"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span><br><span class="line">    Mandatory Default Cache configuration. These settings will be applied to caches</span><br><span class="line">    created programmtically using CacheManager.add(String cacheName)</span><br><span class="line">    --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--</span><br><span class="line">       name:缓存名称。</span><br><span class="line">       maxElementsInMemory：缓存最大个数。</span><br><span class="line">       eternal:对象是否永久有效，一但设置了，timeout将不起作用。</span><br><span class="line">       timeToIdleSeconds：设置对象在失效前的允许闲置时间（单位：秒）。仅当eternal=false对象不是永久有效时使用，可选属性，默认值是0，也就是可闲置时间无穷大。</span><br><span class="line">       timeToLiveSeconds：设置对象在失效前允许存活时间（单位：秒）。最大时间介于创建时间和失效时间之间。仅当eternal=false对象不是永久有效时使用，默认是0.，也就是对象存活时间无穷大。</span><br><span class="line">       overflowToDisk：当内存中对象数量达到maxElementsInMemory时，Ehcache将会对象写到磁盘中。</span><br><span class="line">       diskSpoolBufferSizeMB：这个参数设置DiskStore（磁盘缓存）的缓存区大小。默认是30MB。每个Cache都应该有自己的一个缓冲区。</span><br><span class="line">       maxElementsOnDisk：硬盘最大缓存个数。</span><br><span class="line">       diskPersistent：是否缓存虚拟机重启期数据 Whether the disk store persists between restarts of the Virtual Machine. The default value is false.</span><br><span class="line">       diskExpiryThreadIntervalSeconds：磁盘失效线程运行时间间隔，默认是120秒。</span><br><span class="line">       memoryStoreEvictionPolicy：当达到maxElementsInMemory限制时，Ehcache将会根据指定的策略去清理内存。默认策略是LRU（最近最少使用）。你可以设置为FIFO（先进先出）或是LFU（较少使用）。</span><br><span class="line">       clearOnFlush：内存数量最大时是否清除。</span><br><span class="line">    --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">defaultCache</span></span><br><span class="line">            <span class="attribute">maxElementsInMemory</span>=<span class="value">"10000"</span></span><br><span class="line">            <span class="attribute">eternal</span>=<span class="value">"false"</span></span><br><span class="line">            <span class="attribute">timeToIdleSeconds</span>=<span class="value">"120"</span></span><br><span class="line">            <span class="attribute">timeToLiveSeconds</span>=<span class="value">"120"</span></span><br><span class="line">            <span class="attribute">overflowToDisk</span>=<span class="value">"true"</span></span><br><span class="line">            <span class="attribute">maxElementsOnDisk</span>=<span class="value">"10000000"</span></span><br><span class="line">            <span class="attribute">diskPersistent</span>=<span class="value">"false"</span></span><br><span class="line">            <span class="attribute">diskExpiryThreadIntervalSeconds</span>=<span class="value">"120"</span></span><br><span class="line">            <span class="attribute">memoryStoreEvictionPolicy</span>=<span class="value">"LRU"</span></span><br><span class="line">            /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ehcache</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -241,18 +227,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/03/07/UserAgentUtils-Browser/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/02/07/linux-command/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          UserAgentUtils判断浏览器
+          高效Linux命令小结
         
       </div>
     </a>
   
   
-    <a href="/2015/02/05/ehcache.xml-setting/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ehcache.xml文件配置说明</div>
+    <a href="/2015/02/01/spring-kaptcha/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring中整合kaptcha验证码</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -281,7 +267,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="linux-command" data-title="高效Linux命令小结" data-url="http://chenxiaoer.com/2015/02/07/linux-command/"></div>
+	<div class="ds-thread" data-thread-key="ehcache.xml-setting" data-title="ehcache.xml文件配置说明" data-url="http://chenxiaoer.com/2015/02/05/ehcache.xml-setting/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

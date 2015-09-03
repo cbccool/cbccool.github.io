@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>高效Linux命令小结 | 陈小二的博客</title>
+  <title>Long类型比较之equals与==的疑惑 | 陈小二的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日常工作中常用的Linux命令小结">
+  <meta name="description" content="在判断两个Long型数据是否相等的时候遇到了一个问题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高效Linux命令小结">
-<meta property="og:url" content="http://chenxiaoer.com/2015/02/07/linux-command/index.html">
+<meta property="og:title" content="Long类型比较之equals与==的疑惑">
+<meta property="og:url" content="http://chenxiaoer.com/2015/05/04/Long-equals-=/index.html">
 <meta property="og:site_name" content="陈小二的博客">
-<meta property="og:description" content="日常工作中常用的Linux命令小结">
-<meta property="og:updated_time" content="2015-09-03T01:32:41.810Z">
+<meta property="og:description" content="在判断两个Long型数据是否相等的时候遇到了一个问题。">
+<meta property="og:updated_time" content="2015-09-03T01:46:01.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高效Linux命令小结">
-<meta name="twitter:description" content="日常工作中常用的Linux命令小结">
+<meta name="twitter:title" content="Long类型比较之equals与==的疑惑">
+<meta name="twitter:description" content="在判断两个Long型数据是否相等的时候遇到了一个问题。">
   
     <link rel="alternative" href="/atom.xml" title="陈小二的博客" type="application/atom+xml">
   
@@ -178,11 +178,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-linux-command" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Long-equals-=" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/02/07/linux-command/" class="article-date">
-  	<time datetime="2015-02-07T03:11:11.000Z" itemprop="datePublished">2015-02-07</time>
+      <a href="/2015/05/04/Long-equals-=/" class="article-date">
+  	<time datetime="2015-05-04T03:11:11.000Z" itemprop="datePublished">2015-05-04</time>
 </a>
     </div>
   
@@ -195,7 +195,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      高效Linux命令小结
+      Long类型比较之equals与==的疑惑
     </h1>
   
 
@@ -204,7 +204,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LINUX/">LINUX</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
 	</div>
 
         
@@ -215,23 +215,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>日常工作中常用的Linux命令小结</p>
+        <p><em>在判断两个Long型数据是否相等的时候遇到了一个问题。</em></p>
 <a id="more"></a>
-<ol>
-<li><code>mv xxxx{,.bak}</code> 等同于 <code>mv xxxx xxxx.bak</code></li>
-<li><code>esc + .</code> 能填充之前命令的最后一个字段</li>
-<li><code>ctrl + r</code> 然后输入xxx，搜索之前包含xxx的命令</li>
-<li><code>ctrl+z</code> 可以把当前程序丢后台，<code>fg</code> 命令可以恢复。</li>
-<li>退出su，退出ssh，可以用<code>ctrl+d</code>(真有人不知道这个，手敲exit, logout)。</li>
-<li><code>sudo !!</code>用sudo执行上条命令。</li>
-<li>如果在前台运行了一个程序，但是你需要退出终端，保持程序继续在后台运行。<br>你可以这样: <code>ctrl+z</code>，把程序放在后台；<code>bg</code>让程序继续运行；<code>disown -h %1</code>（%n是你jobs命令返回的那个，没有其它后台程序的话，一般是%1）。</li>
-<li><code>cd -</code>  返回上一个进入的目录</li>
-<li><code>!n</code> ，重复执行第n条命令，如果该命令很长，就能节省大量输入命令的时间。</li>
-<li><code>!!</code> ，重复执行上一条命令；</li>
-<li><code>sudo !!</code>，以管理员权限执行上一条命令；</li>
-<li><code>ps -eO lstart|grep &#39;xx&#39;</code>,查询xx进程的准确启动时间。</li>
-<li><code>ps -ef|grep &#39;xx&#39;|grep -v grep|cut -c 9-15|xargs kill -9</code> 批量kill进程。<br>或者：<code>ps -ef|grep java|grep -v grep|awk &#39;xx&#39;|xargs -I {} -t kill -9 {}</code></li>
-</ol>
+<h2 id="使用“==”的疑问">使用“==”的疑问</h2><pre><code class="java"><span class="keyword">if</span> (user.getId() == admin.getId()) {  
+    <span class="keyword">return</span> <span class="keyword">true</span>; 
+} <span class="keyword">else</span> {
+    <span class="keyword">return</span> <span class="keyword">false</span>;
+}
+</code></pre>
+<p>两个Long型的ID之间的比较，结果却是false。<br>再看一个</p>
+<pre><code class="java">Long id1 = <span class="number">123L</span>;  
+Long id2 = <span class="number">123L</span>;
+
+System.out.println(id1 == id2);
+
+输出： <span class="keyword">true</span>
+</code></pre>
+<p>同是Long型，同是<code>==</code>,为什么结果不一样呢？<br>看看源代码：</p>
+<pre><code class="java"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">LongCache</span> </span>{  
+  <span class="function"><span class="keyword">private</span> <span class="title">LongCache</span><span class="params">()</span></span>{}
+  <span class="keyword">static</span> <span class="keyword">final</span> Long cache[] = <span class="keyword">new</span> Long[-(-<span class="number">128</span>) + <span class="number">127</span> + <span class="number">1</span>];
+  <span class="keyword">static</span> {
+    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cache.length; i++)
+      cache[i] = <span class="keyword">new</span> Long(i - <span class="number">128</span>);
+  }
+}
+</code></pre>
+<pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Long <span class="title">valueOf</span><span class="params">(<span class="keyword">long</span> l)</span> </span>{  
+  <span class="keyword">final</span> <span class="keyword">int</span> offset = <span class="number">128</span>;
+  <span class="keyword">if</span> (l &gt;= -<span class="number">128</span> &amp;&amp; l &lt;= <span class="number">127</span>) { <span class="comment">// will cache</span>
+    <span class="keyword">return</span> LongCache.cache[(<span class="keyword">int</span>)l + offset];
+  }
+  <span class="keyword">return</span> <span class="keyword">new</span> Long(l);
+}
+</code></pre>
+<p>原来是因为Long中有一个静态的内部类LongCache，专门用于缓存-128至127之间的值，一共256个元素。<br>如果仅仅是缓存下来而不去使用那么就没有任何意义。valueOf(long l)就是使缓存派上用场的方法，它会判断传入的参数是否在-128-127之间，如果是则直接从缓存中返回对应的引用，否则新创建一个Long的实例。</p>
+<h2 id="使用equals">使用equals</h2><p>Long重写了equals方法，如下：</p>
+<pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>{  
+  <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> Long) {
+      <span class="keyword">return</span> value == ((Long)obj).longValue();
+  }
+  <span class="keyword">return</span> <span class="keyword">false</span>;
+  }
+</code></pre>
+<p>它是先通过<code>.longValue()</code>方法获取Long对象的基本类型long的值之后再做比较的。<br>所以，最好还是使用<code>equals</code>进行比较。</p>
+<p>参考：</p>
+<blockquote>
+<p><a href="http://stackoverflow.com/questions/19485818/what-are-not-2-long-variables-equal-with-operator-to-compare-in-java" target="_blank" rel="external">stackoverflow Long型比较的问题</a><br><a href="http://blog.csdn.net/songylwq/article/details/9015079" target="_blank" rel="external">java java.lang.Long详解之二 缓存</a><br><a href="http://www.2cto.com/kf/201408/324529.html" target="_blank" rel="external">JAVA中Long与Integer比较容易犯的错误</a></p>
+</blockquote>
 
       
     </div>
@@ -241,18 +272,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/03/07/UserAgentUtils-Browser/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          UserAgentUtils判断浏览器
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/02/05/ehcache.xml-setting/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ehcache.xml文件配置说明</div>
+    <a href="/2015/04/07/jsoup-html-blank/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Jsoup解析HTML文本，&amp;nbsp;乱码的问题以及解决</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -281,7 +303,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="linux-command" data-title="高效Linux命令小结" data-url="http://chenxiaoer.com/2015/02/07/linux-command/"></div>
+	<div class="ds-thread" data-thread-key="Long-equals-=" data-title="Long类型比较之equals与==的疑惑" data-url="http://chenxiaoer.com/2015/05/04/Long-equals-=/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
